@@ -17,11 +17,22 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
+      FXMLLoader fxmlLoader = new FXMLLoader();
+      fxmlLoader.setLocation(this.getClass().getResource("primary.fxml"));
+      
+      Parent root = fxmlLoader.load();
+      
+      PrimaryController controller = (PrimaryController) fxmlLoader.getController();
+      controller.registerBindings();
+      
+      Scene scene = new Scene(root);
+      stage.setScene(scene);
+      stage.show(); 
+      /*scene = new Scene(loadFXML("primary"), 640, 480);
         stage.setScene(scene);
-        stage.show();
+        stage.show();*/
     }
-
+/*
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }
@@ -29,7 +40,7 @@ public class App extends Application {
     private static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
-    }
+    }*/
 
     public static void main(String[] args) {
         launch();

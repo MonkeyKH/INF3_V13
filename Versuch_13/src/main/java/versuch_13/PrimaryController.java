@@ -27,7 +27,7 @@ public class PrimaryController {
     
     public void registerBindings()
     {
-      //label.textProperty().bind(textFeld.textProperty());
+      label.textProperty().bind(textFeld.textProperty());
     }
     
 }
