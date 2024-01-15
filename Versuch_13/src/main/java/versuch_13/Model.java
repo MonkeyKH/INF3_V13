@@ -14,18 +14,26 @@ import javafx.beans.property.SimpleStringProperty;
 public class Model 
 {
   private SimpleStringProperty string;
+  private SimpleStringProperty stringInfotext;
+
   public Model()
   {
     string = new SimpleStringProperty();
+    stringInfotext = new SimpleStringProperty();
   }
   
   public void uebersetzen()
   {
-  
+    stringInfotext.setValue(getString().get());
   }
   
   public SimpleStringProperty getString()
   {
     return string;
+  }  
+  
+  public SimpleStringProperty getstringInfotext()
+  {
+    return stringInfotext;
   }
 }

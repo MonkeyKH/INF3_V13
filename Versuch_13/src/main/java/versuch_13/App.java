@@ -28,6 +28,12 @@ public class App extends Application {
       Scene scene = new Scene(root);
       stage.setScene(scene);
       stage.show(); */
+      FXMLLoader fxmlLoader = new FXMLLoader();
+      fxmlLoader.setLocation(this.getClass().getResource("primary.fxml"));
+      Parent root = fxmlLoader.load();
+      
+      PrimaryController controller = (PrimaryController) fxmlLoader.getController();
+      controller.registerBindings();
       scene = new Scene(loadFXML("primary"), 640, 480);
         stage.setScene(scene);
         stage.show();
