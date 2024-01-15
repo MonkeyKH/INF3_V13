@@ -7,6 +7,35 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+
+public class PrimaryController {
+
+    @FXML
+    private Button button;
+
+    @FXML
+    private Label label;
+
+    @FXML
+    private TextField textFeld;
+
+    @FXML
+    void buttonAction(ActionEvent event) {
+
+    }
+
+    public void registerBindings()
+    {
+      label.textProperty().bind(textFeld.textProperty());
+    }
+}
+/*
 public class PrimaryController {
 
   
@@ -31,3 +60,4 @@ public class PrimaryController {
     }
     
 }
+*/
