@@ -27,7 +27,7 @@ public class Model
   {
     //stringInfotext.setValue(getStringInput().get());
     stringInput.set(newText);
-    stringInfotext.set("Hallo " + stringInput.get() + ", Dein Name rueckwarts lautet "+ new StringBuilder(stringInput.get()).reverse().toString());
+    stringInfotext.set(new StringBuilder(stringInput.get()).toString().toUpperCase());
  
     
   }
