@@ -17,7 +17,7 @@ public class App extends Application {
   public void start(Stage stage) throws IOException
   {
     FXMLLoader fxmllLoader = new FXMLLoader();
-    fxmllLoader.setLocation(this.getClass().getResource("primary.fxml"));
+    fxmllLoader.setLocation(this.getClass().getResource("view.fxml"));
     
     Parent root = fxmllLoader.load();
     
