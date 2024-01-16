@@ -6,6 +6,7 @@
 package versuch_13;
 
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 /**
  *
@@ -13,26 +14,30 @@ import javafx.beans.property.SimpleStringProperty;
  */
 public class Model 
 {
-  private SimpleStringProperty string;
-  private SimpleStringProperty stringInfotext;
+  private StringProperty stringInput;
+  private StringProperty stringInfotext;
 
   public Model()
   {
-    string = new SimpleStringProperty();
-    stringInfotext = new SimpleStringProperty();
+    stringInput = new SimpleStringProperty("");
+    stringInfotext = new SimpleStringProperty("");
   }
   
-  public void uebersetzen()
+  public void uebersetzen(String newText)
   {
-    stringInfotext.setValue(getString().get());
+    //stringInfotext.setValue(getStringInput().get());
+    stringInput.set(newText);
+    stringInfotext.set("Hallo " + stringInput.get() + ", Dein Name rueckwarts lautet "+ new StringBuilder(stringInput.get()).reverse().toString());
+ 
+    
   }
   
-  public SimpleStringProperty getString()
+  public StringProperty getStringInput()
   {
-    return string;
+    return stringInput;
   }  
   
-  public SimpleStringProperty getstringInfotext()
+  public StringProperty getstringInfotext()
   {
     return stringInfotext;
   }
